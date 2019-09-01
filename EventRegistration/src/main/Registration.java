@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Random;
-
 import alert.Warning;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -106,8 +105,6 @@ public class Registration extends Application {
 	{
 		prStage = pStage;
 		
-
-		
 		//NOTE: Pane options
 		Pane findEventPane = new Pane();
 		Pane homePane = new Pane();
@@ -116,25 +113,23 @@ public class Registration extends Application {
 		Pane statsPane = new Pane();
 		Pane addStudentPane = new Pane();
 		
-		
 		//NOTE: Graph
-        final CategoryAxis xAxis = new CategoryAxis();
-        final NumberAxis yAxis = new NumberAxis();
-        final BarChart<String,Number> bc = new BarChart<String,Number>(xAxis,yAxis);
-        bc.setTitle("Majors Summary");
-        xAxis.setLabel("Majors");       
-        yAxis.setLabel("Students Attending");
+        	final CategoryAxis xAxis = new CategoryAxis();
+        	final NumberAxis yAxis = new NumberAxis();
+        	final BarChart<String,Number> bc = new BarChart<String,Number>(xAxis,yAxis);
+        	bc.setTitle("Majors Summary");
+        	xAxis.setLabel("Majors");       
+        	yAxis.setLabel("Students Attending");
 		
 		//NOTE: Title
 		lab_title.setLayoutX(80);
 		lab_title.setLayoutY(70);
 		
-		//home title
+		//NOTE: home title
 		lab_homeTitle.setLayoutX(150);
 		lab_homeTitle.setLayoutY(20);
 		
 		//NOTE: Event Code
-		//TODO: Must make character length limit
 		lab_eventCode.setLayoutX(80);
 		lab_eventCode.setLayoutY(80);
 		lab_eventCode.setStyle("-fx-font: 24 arial;");
@@ -273,7 +268,7 @@ public class Registration extends Application {
 		majorScene = new Scene(bc,800,600);
 
 		//NOTE: This is needed for the bar graph to add the data
-        bc.getData().addAll(series);
+        	bc.getData().addAll(series);
 		
 		//Stage Setup
 		prStage.setTitle("Event Registration");
@@ -300,7 +295,6 @@ public class Registration extends Application {
 				System.out.println("Event not found.");
 
 		});
-		
 		
 		/*************************************************************************************
 		*TESTS
@@ -431,7 +425,6 @@ public class Registration extends Application {
 			else {
 				Warning.warn("Please enter a valid major.");
 				return false;
-
 			}
 
 		} else
